@@ -1,0 +1,48 @@
+
+@CounterpartyRegistry_HostAddress = https://localhost:7273
+
+### Получить всех контрагентов
+GET {{CounterpartyRegistry_HostAddress}}/api/counterparties
+Accept: application/json
+
+###
+
+### Получить контрагента по ID
+GET {{CounterpartyRegistry_HostAddress}}/api/counterparties/1
+Accept: application/json
+
+###
+
+### Добавить нового контрагента
+POST {{CounterpartyRegistry_HostAddress}}/api/counterparties
+Content-Type: application/json
+
+{
+  "name": "ООО Новый Контрагент",
+  "inn": "7701111111",
+  "kpp": "770101001",
+  "ogrn": "1234567890125",
+  "legalAddress": "г. Москва, ул. Тестовая, д. 1",
+  "phone": "+7 900 111-11-11",
+  "email": "test@example.ru",
+  "contactPerson": "Иванов Иван",
+  "status": "Активен"
+}
+### Изменить контрагента
+PUT {{CounterpartyRegistry_HostAddress}}/api/counterparties/1
+Content-Type: application/json
+
+{
+  "name": "ООО Новый Контрагент Плюс",
+  "inn": "7701111111",
+  "kpp": "770101001",
+  "ogrn": "1234567890125",
+  "legalAddress": "г. Москва, ул. Новая, д. 5",
+  "phone": "+7 900 222-22-22",
+  "email": "new@example.ru",
+  "contactPerson": "Петров Петр",
+  "status": "Активен"
+}
+### удалить контрагента
+DELETE {{CounterpartyRegistry_HostAddress}}/api/counterparties/3
+Accept: application/json
